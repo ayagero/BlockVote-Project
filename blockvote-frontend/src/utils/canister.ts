@@ -1,9 +1,9 @@
 // src/utils/canister.ts
 import { Actor, HttpAgent } from '@dfinity/agent';
-import { idlFactory } from './blockvote.did'; // Generate this from Motoko canister
+import { idlFactory } from "../../declarations/blockvote-backend/blockvote-backend.did"; // Generate this from Motoko canister
 
 const agent = new HttpAgent({ host: 'http://localhost:8000' }); // Update to mainnet later
-const canisterId = 'ryjl3-tyaaa-aaaaa-aaaba-cai'; // Replace with your deployed canister ID
+const canisterId = 'uxrrr-q7777-77774-qaaaq-cai'; // Replace with your deployed canister ID
 const actor = Actor.createActor(idlFactory, { agent, canisterId });
 
 export async function createPoll(

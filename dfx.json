@@ -1,0 +1,32 @@
+{
+  "canisters": {
+    "blockvote-backend": {
+      "main": "blockvote_backend/main.mo",
+      "type": "motoko"
+    },
+    "blockvote-frontend": {
+      "frontend": {
+        "entrypoint": "blockvote-frontend/dist/index.html"
+      },
+      "source": ["blockvote-frontend/dist"],
+      "type": "assets",
+      "build": [
+        "cd blockvote-frontend",
+        "npm install",
+        "npm run build"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "version": 1,
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}
